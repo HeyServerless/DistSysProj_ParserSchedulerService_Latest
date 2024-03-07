@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package DIVISION;
+//  
+
+option go_package = "github.com/rajeshreddyt/GrpcServerDivision";
+
+service DivisionService {
+    rpc DivisionMethod (DivisionRequest) returns (DivisionResponse) {}
+}
+
+message DivisionRequest {
+    float a=1;
+    float b=2;
+}
+
+message DivisionResponse {
+    float result=1;
+}

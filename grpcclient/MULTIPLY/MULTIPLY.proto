@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package MULTIPLY;
+//  
+
+option go_package = "github.com/rajeshreddyt/GrpcServerMultiply";
+
+service MultiplyService {
+    rpc MultiplyMethod (MultiplyRequest) returns (MultiplyResponse) {}
+}
+
+message MultiplyRequest {
+    float a=1;
+    float b=2;
+}
+
+message MultiplyResponse {
+    float result=1;
+}

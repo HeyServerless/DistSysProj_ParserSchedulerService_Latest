@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package SUBTRACT;
+//  
+
+option go_package = "github.com/rajeshreddyt/GrpcServerSubtract";
+
+service SubtractService {
+    rpc SubtractMethod (SubtractRequest) returns (SubtractResponse) {}
+}
+
+message SubtractRequest {
+    float a=1;
+    float b=2;
+}
+
+message SubtractResponse {
+    float result=1;
+}

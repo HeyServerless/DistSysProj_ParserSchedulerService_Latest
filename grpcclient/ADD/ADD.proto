@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ADD;
+//  
+
+option go_package = "github.com/rajeshreddyt/GrpcServerAdd";
+
+service AddService {
+    rpc AddMethod (AddRequest) returns (AddResponse) {}
+}
+
+message AddRequest {
+    float a=1;
+    float b=2;
+}
+
+message AddResponse {
+    float sum=1;
+}

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-http
+  template:
+    metadata:
+      labels:
+        app: node-http
+    spec:
+      containers:
+      - name: node-http
+        image: rajeshreddyt/nodeapp:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-http
+spec:
+  selector:
+    app: node-http
+  
+  ports:
+  - protocol: TCP
+    port: 3000
+    nodePort: 30001
+  type: NodePort
